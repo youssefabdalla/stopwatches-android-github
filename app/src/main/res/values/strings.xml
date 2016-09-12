@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">Counterat</string>
+    <string name="action_settings">Settings</string>
+    <string name="default_counter_label"></string>
+
+    <!-- corresponds to the SingleCounterBean field 'isCounterRunning'-->
+    <string name="counter_status_active">ACTIVE</string>
+    <string name="counter_status_not_active">NOT ACTIVE</string>
+
+    <!-- The key of the file used to save all data-->
+    <string name="saved_values_file_key">com.joe.android.counterat.SAVED_VALUES_FILE_KEY</string>
+
+    <!-- the default labels of the counters which uis used to create the CounterArrayListBean at the first usage-->
+    <string-array name="default_counters_labels">
+        <item>Eat</item>
+        <item>Work</item>
+        <item>Sleep</item>
+        <item>Play</item>
+        <item>Family</item>
+    </string-array>
+
+    <!--keys for the counter properties which will be used to update the counters data as for the SingleCounterBean-->
+    <string name="counter_labels_string_array_key">counter_labels_string_array_</string>
+    <string name="counter_description_field_key">"counter_description_"</string>
+    <string name="chronometer_base_field_key">"chronometer_base_"</string>
+    <string name="counter_is_counter_running_field_key">"is_counter_running_"</string>
+    <string name="counter_last_known_count_field_key">"last_known_count_"</string>
+
+    <!--texts that should appear on the buttons of the chronometer as in the ChronometerHandler-->
+    <string name="chronometer_start_button_text">"START"</string>
+    <string name="chronometer_pause_button_text">"PAUSE"</string>
+    <string name="chronometer_stop_button_text">"RESET"</string>
+    <string name="chronometer_resume_button_text">"RESUME"</string>
+
+    <string name="counter_never_used_text">never used</string>
+    <!-- The add new dialog-->
+    <string name="add_new_counter_dialog_title"> Add new counter</string>
+    <!--delete counter button-->
+    <string name="delete_counter_button_label"> Delete counter</string>
+    <!-- delete all counters dialog message-->
+    <string name="delete_all_counters_confirmation_dialog_message">Deleting all counters will result in deleting all counters information. are you sure you want to delete all counters?</string>
+    <!-- delete all counters positive button label-->
+    <string name="delete_all_counters_positive_button_label">Yes</string>
+    <!-- delete all counters positive button label-->
+    <string name="delete_all_counters_negative_button_label">No</string>
+</resources>

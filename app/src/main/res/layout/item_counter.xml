@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:focusable="false"
+    android:gravity="center_vertical|center_horizontal">
+
+    <!-- this is the indicator on-off button -->
+    <TextView
+        android:id="@+id/item_counter_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="15sp"
+        android:contentDescription="counter status"
+        android:text="@string/counter_status_active"
+        android:textColor="@color/colorPrimary"
+        android:visibility="invisible" />
+
+    <!-- the title of the counter-->
+    <TextView
+        android:id="@+id/item_counter_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@id/item_counter_status"
+        android:enabled="true"
+        android:gravity="fill_horizontal"
+        android:text="empty counter"
+        android:textSize="24sp" />
+
+    <Chronometer
+        android:id="@+id/item_counter_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/item_counter_status"
+        android:enabled="true"
+        android:gravity="right"
+        android:textSize="20sp" />
+
+    <View
+        android:id="@+id/separator"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_below="@id/item_counter_time"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:background="#90909090" />
+
+</RelativeLayout>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/media/youssefabdalla/SQSTest/personal/TasksFollowUpApp/stopwatches/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/22.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="e0b0c35d02308b270015a74cada4887e2e49b889">
+        <dex dex="/media/youssefabdalla/SQSTest/personal/TasksFollowUpApp/stopwatches/app/build/intermediates/pre-dexed/debug/com.android.support-recyclerview-v7-22.1.1_742cad38c36397084e3c42cacd724ba8e80bf5a6.jar" />
+    </item>
+    <item
+        jar="/media/youssefabdalla/SQSTest/personal/TasksFollowUpApp/stopwatches/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.1/jars/libs/internal_impl-22.2.1.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="c471eaaba13ff64f6e0383d1c30a9cdc9a97efeb">
+        <dex dex="/media/youssefabdalla/SQSTest/personal/TasksFollowUpApp/stopwatches/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.1_3f4d510a95fdb84eedac155a7777479e87f8a37c.jar" />
+    </item>
+    <item
+        jar="/home/youssefabdalla/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.1/support-annotations-22.2.1.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="61a0ff5c29295ec56d7e0bd3d25d95dbf71b4b2b">
+        <dex dex="/media/youssefabdalla/SQSTest/personal/TasksFollowUpApp/stopwatches/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.1_f0b8e018d46abe1b8dd37678c517440cfce1c935.jar" />
+    </item>
+    <item
+        jar="/media/youssefabdalla/SQSTest/personal/TasksFollowUpApp/stopwatches/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="4486e953d1f35f8ccab098b1dd67146366d5f731">
+        <dex dex="/media/youssefabdalla/SQSTest/personal/TasksFollowUpApp/stopwatches/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-22.2.1_b36f4c7708f177e97b7a34fb791d7bc21e114b96.jar" />
+    </item>
+    <item
+        jar="/media/youssefabdalla/SQSTest/personal/TasksFollowUpApp/stopwatches/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="f8efd0096475e0daf054267b61544e10dc776503">
+        <dex dex="/media/youssefabdalla/SQSTest/personal/TasksFollowUpApp/stopwatches/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-22.2.1_cbeba06f99feb28fe737c8b02d758b8a7c96af9d.jar" />
+    </item>
+    <item
+        jar="/media/youssefabdalla/SQSTest/personal/TasksFollowUpApp/stopwatches/app/build/intermediates/exploded-aar/com.android.support/design/22.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="1821601ddbec5ff125653097812823388700af74">
+        <dex dex="/media/youssefabdalla/SQSTest/personal/TasksFollowUpApp/stopwatches/app/build/intermediates/pre-dexed/debug/com.android.support-design-22.2.1_26421f43d9a77ca6e89e9c3b9153a79ec7dcd867.jar" />
+    </item>
+
+</items>
