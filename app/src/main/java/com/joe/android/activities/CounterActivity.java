@@ -16,6 +16,7 @@ import com.joe.android.helpers.Utils;
 
 public class CounterActivity extends AppCompatActivity {
 
+    /** This the counter activity*/
 
     ChronometerHandler chronometerHandler;
     private TextView counterTitleTextView;
