@@ -21,6 +21,8 @@ import com.joe.android.helpers.AddNewCounterDialog;
 import com.joe.android.helpers.CountersDataAdapter;
 import com.joe.android.helpers.Utils;
 
+import java.util.Iterator;
+
 /**
  * This is the the activity that holds the list of the counters names.
  */
@@ -28,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView countersRecyclerView;
     CounterArrayListBean<SingleCounterBean> countersArrayList;
     CountersDataAdapter countersDataAdapter;
+    int usageCounter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +50,8 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
         //create the array list
         countersArrayList = CounterArrayListBean.create(this);
+
+
         countersDataAdapter = new CountersDataAdapter(countersArrayList);
 
         countersRecyclerView.setAdapter(countersDataAdapter);
@@ -79,10 +84,12 @@ public class MainActivity extends AppCompatActivity {
             deleteAllAlertBuilder.setPositiveButton(R.string.delete_all_counters_positive_button_label, new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-                    countersDataAdapter.removeAll();
+                    countersDataAdapter.removeAll(MainActivity.this);
                     countersDataAdapter.notifyDataSetChanged();
                 }
             });
+
+
             deleteAllAlertBuilder.setNegativeButton(R.string.delete_all_counters_negative_button_label, new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
@@ -130,8 +137,14 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onPause() {
+        usageCounter = Utils.readUsageCounterFromSharedResources(this);
+        Utils.incrementUsageCounter(this);
+        Iterator<SingleCounterBean> iterator = countersArrayList.iterator();
+        while (iterator.hasNext()) {
+            SingleCounterBean counter = iterator.next();
+            counter.writeBeanToSharedResources();
+        }
         super.onPause();
-
     }
 
     private void deleteListViewItem(AdapterView.AdapterContextMenuInfo itemInfo) {

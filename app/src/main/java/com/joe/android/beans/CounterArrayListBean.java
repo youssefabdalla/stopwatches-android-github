@@ -37,13 +37,15 @@ public class CounterArrayListBean<T extends SingleCounterBean> extends ArrayList
 
     public static synchronized CounterArrayListBean create(Context context) {
         if (null == instance) {
-            String[] labels = CounterArrayListBean.getDefaultCountersLabelsArray(context);
-
-            if (Utils.readUsageCounterFromSharedResources(context) != 0) {
+            String[]labels={""};
+            int usageCounter = Utils.readUsageCounterFromSharedResources(context);
+            if (usageCounter != 0) {
                 SharedPreferences sharedPreferences = context.getSharedPreferences(context.getString(R.string.saved_values_file_key), Context.MODE_PRIVATE);
                 Set<String> labelsAsSetFromSharedResorces = sharedPreferences.getStringSet(context.getString(R.string.counter_labels_string_array_key), new HashSet<String>(Arrays.asList(labels)));
                 labels = new String[labelsAsSetFromSharedResorces.size()];
                 labels = labelsAsSetFromSharedResorces.toArray(labels);
+            } else{
+                labels = CounterArrayListBean.getDefaultCountersLabelsArray(context);
             }
 
             instance = new CounterArrayListBean();
@@ -51,7 +53,7 @@ public class CounterArrayListBean<T extends SingleCounterBean> extends ArrayList
             for (String counterLabel : labels) {
                 SingleCounterBean singleCounterBean = new SingleCounterBean(context, counterLabel);
                 instance.add(singleCounterBean);
-                singleCounterBean.writeBeanToSharedResources();
+                // singleCounterBean.writeBeanToSharedResources();
             }
         }
 
@@ -148,10 +150,20 @@ public class CounterArrayListBean<T extends SingleCounterBean> extends ArrayList
         return isDeleted;
     }
 
-   public void removeAll()
-   {
-       this.removeRange(0, this.size());
-   }
+    public void removeAll(Context context) {
+        this.removeRange(0, this.size());
+
+        SharedPreferences sharedPreferences = context.getSharedPreferences(context.getString(R.string.saved_values_file_key), Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        Log.d(CounterArrayListBean.class.getName(), "start removing counters information from shared preferences");
+        Set<String> allKeys = sharedPreferences.getAll().keySet();
+        Iterator<String> keysIterator = allKeys.iterator();
+        while (keysIterator.hasNext()) {
+            editor.remove(keysIterator.next());
+        }
+        editor.apply();
+        Log.d(CounterArrayListBean.class.getName(), "End removing counters information from shared preferences. shared preferences is now empty.");
+    }
 
     public boolean add(SingleCounterBean singleCounterBean) {
         int newIndex = contains(singleCounterBean);

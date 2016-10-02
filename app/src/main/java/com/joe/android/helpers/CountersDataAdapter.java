@@ -1,6 +1,7 @@
 package com.joe.android.helpers;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.SystemClock;
 import android.support.v7.widget.RecyclerView;
@@ -80,9 +81,9 @@ public class CountersDataAdapter extends RecyclerView.Adapter<CountersDataAdapte
         return this.getCountersData().remove(counterLabel);
     }
 
-    public boolean removeAll() {
+    public boolean removeAll(Context context) {
         Log.d(this.getClass().getName(), "remove all counters");
-        this.getCountersData().removeAll();
+        this.getCountersData().removeAll(context);
        if (this.getItemCount() == 0) return true;
         return false;
     }

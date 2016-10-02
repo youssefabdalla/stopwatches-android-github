@@ -26,7 +26,9 @@ public class Utils {
 
     public static int readUsageCounterFromSharedResources(Context context) {
         SharedPreferences countersValuesSharedPreferences = context.getSharedPreferences(context.getString(R.string.saved_values_file_key), Context.MODE_PRIVATE);
-        return countersValuesSharedPreferences.getInt(USAGE_COUNTER_KEY, 0);
+        int usageCounter = countersValuesSharedPreferences.getInt(USAGE_COUNTER_KEY, 0);
+        Log.d(Utils.class.getName(), "Usage Counter = " + usageCounter);
+        return usageCounter;
     }
 
 

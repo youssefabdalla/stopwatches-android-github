@@ -43,7 +43,8 @@ public class SingleCounterBean {
      * </ol>
      */
     public SingleCounterBean(Context context, String label) {
-        this(context);
+        chronometerBase = SystemClock.elapsedRealtime();
+        this.context = context;
         SharedPreferences sharedPreferences = context.getSharedPreferences(context.getString(R.string.saved_values_file_key), Context.MODE_PRIVATE);
         boolean counterAlreadyCreatedInSharedResources = sharedPreferences.getStringSet(context.getString(R.string.counter_labels_string_array_key), Utils.
                 getStringArrayAsSet(CounterArrayListBean.getDefaultCountersLabelsArray(context))).contains(label);
@@ -146,6 +147,7 @@ public class SingleCounterBean {
     public void putIsCounterRunningInSharedResources() {
         Log.d(this.getClass().getName(), "writing is counter running  to shared resources.");
         getSharedResourcesEditor().putBoolean(context.getString(R.string.counter_is_counter_running_field_key) + counterLabel, isCounterRunning).apply();
+
     }
 
     /**
@@ -153,7 +155,6 @@ public class SingleCounterBean {
      */
     public void writeBeanToSharedResources() {
         this.putCounterLabelInSharedResources();
-        this.putCounterLastKnownCountInSharedResources();
         this.putDescriptionInSharedResources();
         this.putIsCounterRunningInSharedResources();
         this.putChronometerBaseInSharedResources();
